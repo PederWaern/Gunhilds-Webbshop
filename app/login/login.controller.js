@@ -6,7 +6,6 @@ angular.module("login")
             };
 
 
-        
         $scope.login = function () {
             $scope.showDanger = false;
             $scope.showSuccess = false;
@@ -19,10 +18,12 @@ angular.module("login")
                 var res = {};
                 res = response;
                 
+                loginService.setUser(res.data);
+                loginService.setUserLoggedIn(true);
+
                 $scope.showSuccess = true;
                 $scope.text = res.data.firstName + " " + res.data.lastName + " är inloggad";
-                loginService.setNames(res.data.firstName, res.data.lastName);
-                loginService.setUserLoggedIn(true);
+                
                 
 
             }, function errorCallback(response) {

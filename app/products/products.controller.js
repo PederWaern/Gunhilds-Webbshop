@@ -29,7 +29,6 @@ angular.module("products")
 
         $scope.addProductToCart = function(product) {
             console.log("from addProductToCart: product" + product.name + "added!");
-            console.log(product.amount);
             cartService.addProductToCart(product);
             $scope.cartSize = cartService.getAmountArticlesAdded();
 

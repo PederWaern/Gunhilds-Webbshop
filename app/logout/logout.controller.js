@@ -4,6 +4,7 @@ angular.module("logout")
          if(!loginService.getLoginStatus()) {
                 $location.path("/Login");
             };
+
         $scope.logoutText = "Du är inloggad som " + loginService.getNames();
     
         $scope.logOut = function () {

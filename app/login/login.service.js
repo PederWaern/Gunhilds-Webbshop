@@ -2,8 +2,7 @@ angular.module("login")
 .factory("loginService",["$http", function($http) {
     var isLoggedIn = false;
     var navText = "Logga in";
-    var firstName;
-    var lastName;
+    var user = {};
 
     return { 
         loginUser: function (loginDetails){
@@ -36,7 +35,20 @@ angular.module("login")
             lastName = lName;
         },
         getNames: function () {
-            return firstName + " " + lastName;
+            return user.firstName + " " + user.lastName;
+        },
+
+        setUser: function(userO) {
+            user = userO;
+            console.log("from login service, user is: " + user.firstName + user.lastName);
+        },
+
+        getUser: function() {
+            return user;
+        },
+
+        getUserId: function() {
+            return user.customerId;
         }
     
      }

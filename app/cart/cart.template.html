@@ -2,7 +2,7 @@
     <h1>Varukorg </h1>
 </div>
 <div class="row">
-<table class="table table-bordered">
+<table class="table borderless">
 		<thead>
 			<tr>
 				<th>Namn</th>
@@ -16,17 +16,22 @@
 				<td>{{ product.name}} </td>
 				<td>{{ product.description }}</td>
 				<td>{{ product.price }}kr</td>
-                <td>{{ product.amount }}</td>
+                <td>{{ product.quantity }}</td>
                 <td><button class="btn btn-primary" ng-click="removeFromCart(product)">Ta bort</button> </td>
 			</tr>
 			<tr>
 				<td></td>
 				<td></td>
 				<td>Totalbelopp: {{ getTotalPrice }}kr</td>
+			</tr>
+			<tr>
+				<td><button class="btn btn-primary" ng-click="emptyCart()">Töm kundvagn</button></td>
+				<td></td>
+				<td><button class="btn btn-primary" ng-click="sendOrder()">Beställ!</button></td>
+			</tr>
 		</tbody>
 		
 	</table>
-<button class="btn btn-primary" ng-click="emptyCart()">Töm kundvagn</button> 
 </div>
 
 
