@@ -11,20 +11,23 @@ angular.module("cart")
             $scope.showLoginButton = true;
         }
 
-        
-        
-
-
+    
         $scope.products = cartService.getCart();
         $scope.removeFromCart = function(prod) {
             cartService.removeProductFromCart(prod);
             $scope.products = cartService.getCart();
             $scope.getTotalPrice = cartService.getTotalPrice();
+            if (cartService.getCartSize() < 1) {
+                $scope.showSendButton = false;
+            }
         }
 
         $scope.emptyCart = function() {
             cartService.clearCart();
             $scope.products = cartService.getCart();
+            $scope.getTotalPrice = cartService.getTotalPrice();
+            $scope.showSendButton = false;
+
         }
 
         $scope.getTotalPrice = cartService.getTotalPrice();
@@ -51,7 +54,7 @@ angular.module("cart")
             console.log(order);
             cartService.sendOrder(order).then(function successCallback(response) {
                 $scope.showSuccess = true;
-                $scope.text = "Din order har skickats!";
+                $scope.text = "Tack, din order har skickats!";
                 cartService.clearCart();
                 
 
