@@ -2,6 +2,19 @@ angular.module("cart")
     .controller("cartController", ["$scope", "$http", "$location", "cartService","loginService", 
     function($scope, $http, $location, cartService, loginService){
 
+        
+        if (loginService.getLoginStatus() && cartService.getCartSize() > 0) {
+            $scope.showSendButton = true;
+        };
+
+        if (!loginService.getLoginStatus()){
+            $scope.showLoginButton = true;
+        }
+
+        
+        
+
+
         $scope.products = cartService.getCart();
         $scope.removeFromCart = function(prod) {
             cartService.removeProductFromCart(prod);

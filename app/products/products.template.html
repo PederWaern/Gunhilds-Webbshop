@@ -26,19 +26,21 @@
 </div>
 
 <div class="row">
-	<table class="table table-bordered">
+	<table class="table borderless">
 		<thead>
 			<tr>
 				<th>Namn</th>
 				<th>Bild</th>
 				<th>Pris</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr ng-repeat="product in products | filter: textfilter">
-				<td>{{ product.name}} <button class="btn btn-primary" ng-click="addProductToCart(product)">Köp nu</button></td>
+				<td ng-click="productClicked(product.id)">{{ product.name }} </td>
 				<td><img class="clothpic" src="{{ product.imageUrl }}" ng-click="productClicked(product.id)" /></td>
 				<td>{{ product.price }}kr</td>
+				<td><button class="btn btn-primary" ng-click="addProductToCart(product)">Köp nu</button></td>
 			</tr>
 		</tbody>
 	</table>
