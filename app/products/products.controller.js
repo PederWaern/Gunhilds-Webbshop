@@ -4,19 +4,6 @@ angular.module("products")
         var categories = [];
         $scope.cartSize = cartService.getCartSize();
 
-        $scope.addProductToCart = function(product) {
-            console.log("from addProductToCart: product" + product.name + "added!");
-            cartService.addProductToCart(product);
-            $scope.cartSize = cartService.getCartSize();
-        };
-
-
-        $scope.test = "testare";
-
-         $scope.productClicked = function (id) {
-            $location.path("/Products/" + id);
-        }
-
         productsService.getProductCategory().then(function (response) {
             categories = response.data;
             $scope.categories = categories;
@@ -25,6 +12,7 @@ angular.module("products")
             productsService.getProducts().then(function (response) {
                 products = response.data;
 
+                    
                 angular.forEach(categories, function (category) {
                     angular.forEach(products, function (product) {
                         if (product.categoryId == category.id) {
@@ -33,13 +21,24 @@ angular.module("products")
                     })
 
                     $scope.products = products;
-                    
-                    console.log(products);
-                    console.log(categories);
                 });
             })
 
         });
+
+
+        $scope.addProductToCart = function(product) {
+            console.log("from addProductToCart: product" + product.name + "added!");
+            console.log(product.amount);
+            cartService.addProductToCart(product);
+            $scope.cartSize = cartService.getCartSize();
+        };
+
+         $scope.productClicked = function (id) {
+            $location.path("/Products/" + id);
+        }
+
+        
 
         
     }]);

@@ -8,17 +8,21 @@
 				<th>Namn</th>
 				<th>Beskrivning</th>
 				<th>Pris</th>
+                <th>Antal</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr ng-repeat="product in products">
 				<td>{{ product.name}} </td>
-				<td>{{ product.description}}</td>
+				<td>{{ product.description }}</td>
 				<td>{{ product.price }}kr</td>
+                <td>{{ product.amount }}</td>
+                <td><button class="btn btn-primary" ng-click="removeFromCart(product)">Ta bort</button> </td>
 			</tr>
 		</tbody>
+		
 	</table>
-
+<button class="btn btn-primary" ng-click="emptyCart()">Töm kundvagn</button> 
 </div>
 
 
