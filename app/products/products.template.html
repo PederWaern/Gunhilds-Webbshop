@@ -1,0 +1,45 @@
+<div class="row">
+	<div class="col-md-10"></div>
+	<div class="col-md-2">
+		<!--	<div id="redcircle"><span id="circletext">Text</span>
+		</div> -->
+		<div class="btn-group">
+			<a class="btn btn-primary" type="button" href="/Cart">Kundvagn</a>
+			<button type="button" class="btn btn-primary"> {{ cartNumber }}</button>
+		</div>
+	</div>
+
+</div>
+
+
+<div class="row">
+	<div class="form-group">
+		<form>
+			<label for="seachList">Sortera på kategori:</label>
+			<select name="searchList" class="form-control" ng-options="category.name for category in categories track by category.id"
+			 ng-model="categorySelect">
+		</select>
+			<label for="searchText">Sökord:</label>
+			<input name="searchText" class="form-control" type="text" ng-model="textfilter.name"></input>
+	</div>
+	</form>
+</div>
+
+<div class="row">
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Namn</th>
+				<th>Bild</th>
+				<th>Pris</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="product in products | filter: textfilter">
+				<td>{{ product.name}} <button class="btn btn-primary" ng-click="addProductToCart(product)">Köp nu</button></td>
+				<td><img class="clothpic" src="{{ product.imageUrl }}" ng-click="productClicked(product.id)" /></td>
+				<td>{{ product.price }}kr</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

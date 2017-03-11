@@ -1,0 +1,27 @@
+<div class="row">
+    <a class="btn btn-info" href="/Products">Tillbaka</a>
+</div>
+<div class ="row">            
+  			<table class="table table-bordered">
+			    <thead>
+			      <tr>
+			        <th>Namn</th>
+                    <th>Kategori</th>
+                    <th>Beskrivning</th>
+			        <th>Bild</th>
+                    <th>Lagerantal</th>
+			        <th>Pris</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <tr ng-model="product">
+			        <td>{{ product.name }}</td>
+                    <td> {{ product.categoryName}}
+                    <td> {{product.description}}</td>
+			        <td><img src="{{ product.imageUrl }}" /></td>
+                    <td> {{ product.unitsInStock }}</td>
+			        <td>{{ product.price}}kr</td>
+			      </tr>
+			    </tbody>
+  			</table>
+		</div>
