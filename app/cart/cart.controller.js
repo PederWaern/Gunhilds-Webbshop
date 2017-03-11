@@ -20,10 +20,11 @@ angular.module("cart")
             var order = {};
             var userId = loginService.getUserId();
             console.log(userId);
-            var products = [];
-            var item = {};
+            
             var cart = cartService.getCart();
 
+            var products = [];
+            var item = {};
             angular.forEach(cart, function (prod) {
                     item.productId = prod.id;
                     item.quantity = prod.quantity;
@@ -35,6 +36,20 @@ angular.module("cart")
             order.customerId = userId;
             order.products = products;
             console.log(order);
+            cartService.sendOrder(order).then(function successCallback(response) {
+                $scope.showSuccess = true;
+                $scope.text = "Din order har skickats!";
+                cartService.clearCart();
+                
+
+            }, function errorCallback(response) {
+                $scope.showDanger = true;
+                $scope.text = "Lyckades inte skicka din order";
+            });
+
+
+
+
 
             
             

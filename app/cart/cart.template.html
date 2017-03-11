@@ -30,8 +30,11 @@
 				<td><button class="btn btn-primary" ng-click="sendOrder()">Beställ!</button></td>
 			</tr>
 		</tbody>
-		
 	</table>
+</div>
+<div class="row">
+	<h3 class="text-danger" ng-model="dangertext" ng-show="showDanger"> {{ text }} </h3>
+    <h3 class="text-success" ng-model="successtext" ng-show="showSuccess"> {{ text }} </h3>
 </div>
 
 

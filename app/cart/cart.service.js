@@ -60,11 +60,6 @@ angular.module("cart")
             },
 
             sendOrder: function (order) {
-                var orderToSend = {};
-                
-                toSend.email = loginDetails.email;
-                toSend.password = loginDetails.password;
-
                 return $http.post("http://nackbutik.azurewebsites.net/api/order", order);
             },
 
