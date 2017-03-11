@@ -2,6 +2,9 @@ angular.module("addcustomer")
     .controller("addCustomerController", ["$scope", "$location", "addCustomerService", function ($scope, $location, addCustomerService ) {
 
         $scope.createCustomer = function() {
+            $scope.showDanger = false;
+            $scope.showSuccess = false;
+            
             var cust = {};
             cust.firstName = $scope.firstName;
             cust.lastName = $scope.lastName;

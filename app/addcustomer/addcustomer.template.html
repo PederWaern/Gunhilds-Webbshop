@@ -2,68 +2,67 @@
     <div class="col-md-1"></div>
     <div class="col-md-4">
         <h2>Skapa konto</h2>
-        <form class="form-horizontal" name="loginForm">
+        <form class="form-horizontal" name="addForm" novalidate>
             <div class="form-group">
                 <label for="firstname">Förnamn:</label>
                 <input name="firstname" type="text" class="form-control" placeholder="Förnamn" ng-model="firstName" required />
-                
-                   <p class="text-danger"> Ogiltigt förnamn </p>
+                <span ng-show="addForm.firstname.$touched && addForm.firstname.$invalid">
+                   <p class="text-danger">Fyll i förnamn </p>
                     </span>
             </div>
             <div class="form-group">
                 <label for="lastname">Efternamn:</label>
                 <input type="text" name="lastname" class="form-control" placeholder="Efternamn" ng-model="lastName" required>
-                
-                   <p class="text-danger"> Ogiltigt efternamn </p>
-                    
+                <span ng-show="addForm.lastname.$touched && addForm.lastname.$invalid">
+                   <p class="text-danger"> Fyll i efternamn </p>
+                </span>
             </div>
             <div class="form-group">
                 <label for="email">E-post:</label>
                 <input type="email" name="email" class="form-control" placeholder="E-post" ng-model="email" required>
-                
+                <span ng-show="addForm.email.$touched && addForm.email.$invalid">
                    <p class="text-danger"> Ogiltig e-postadress </p>
-                    
+                </span>
             </div>
             <div class="form-group">
                 <label for="phone">Telefon:</label>
                 <input type="text" name="phone" class="form-control" placeholder="Telefon" ng-model="phone" required>
-                
-                   <p class="text-danger"> Ogiltig telefon </p>
-                    
+                <span ng-show="addForm.phone.$touched && addForm.phone.$invalid">
+                   <p class="text-danger"> Fyll i telefon </p>
+                </span>
             </div>
             <div class="form-group">
                 <label for="password">Lösenord:</label>
                 <input type="password" name="password" class="form-control" placeholder="Lösenord" ng-model="password" required>
-                
-                   <p class="text-danger"> Ogiltig telefon </p>
-               
+                <span ng-show="addForm.password.$touched && addForm.password.$invalid">
+                   <p class="text-danger"> Ogiltigt lösenord </p>
+                </span>
             </div>
             <div class="form-group">
                 <label for="adress">Adress:</label>
                 <input type="text" name="adress" class="form-control" placeholder="Adress" ng-model="address" required>
-                
-                   <p class="text-danger"> Ogiltig adress </p>
-                    
+                <span ng-show="addForm.adress.$touched && addForm.adress.$invalid">
+                   <p class="text-danger"> Fyll i adress </p>
+                </span>
             </div>
             <div class="form-group">
                 <label for="postalcode">Postnummer:</label>
                 <input type="text" name="postalcode" class="form-control" placeholder="Postnummer" ng-model="postalCode" required>
-                
-                   <p class="text-danger"> Ogiltigt postnummer </p>
-                    
+                <span ng-show="addForm.postalcode.$touched && addForm.postalcode.$invalid">
+                   <p class="text-danger"> Fyll i postnummer </p>
+                </span>
             </div>
             <div class="form-group">
                 <label for="city">Stad:</label>
                 <input type="text" name="city" class="form-control" placeholder="Stad" ng-model="city" required>
-                
-                   <p class="text-danger"> Ogiltig stad </p>
-                    
+                <span ng-show="addForm.city.$touched && addForm.city.$invalid">
+                   <p class="text-danger"> Fyll i stad </p>
+                </span>
             </div>
 
             <div class="form-group">
                 <button class="btn btn-info" ng-click="createCustomer()"
-                ng-disabled="loginForm.email.$dirty && loginForm.email.$invalid ||
-                    loginForm.password.$dirty && loginForm.password.$invalid || loginForm.email.$pristine && loginForm.password.$pristine">
+                ng-disabled="addForm.$invalid">
                 Skapa användare</button>
                 
             </div>
