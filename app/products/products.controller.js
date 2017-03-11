@@ -2,7 +2,7 @@ angular.module("products")
     .controller("productsController", ["$scope", "$location", "productsService", "cartService", function ($scope, $location, productsService, cartService) {
         var products = [];
         var categories = [];
-        $scope.cartSize = cartService.getCartSize();
+        $scope.cartSize = cartService.getAmountArticlesAdded();
 
         productsService.getProductCategory().then(function (response) {
             categories = response.data;
@@ -31,7 +31,8 @@ angular.module("products")
             console.log("from addProductToCart: product" + product.name + "added!");
             console.log(product.amount);
             cartService.addProductToCart(product);
-            $scope.cartSize = cartService.getCartSize();
+            $scope.cartSize = cartService.getAmountArticlesAdded();
+
         };
 
          $scope.productClicked = function (id) {

@@ -43,6 +43,13 @@ angular.module("cart")
 
         getCart: function () {
             return cart;
+        },
+        getAmountArticlesAdded : function () {
+            var amount = 0;
+            for (var i = 0; i < cart.length; i++) {
+                amount += cart[i].amount;
+            }
+            return amount;
         }
         };
 
