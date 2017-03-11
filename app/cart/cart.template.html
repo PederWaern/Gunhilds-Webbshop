@@ -1,1 +1,24 @@
-<h1>Varukorg </h1>
+<div class="row">
+    <h1>Varukorg </h1>
+</div>
+<div class="row">
+<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Namn</th>
+				<th>Beskrivning</th>
+				<th>Pris</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="product in products">
+				<td>{{ product.name}} </td>
+				<td>{{ product.description}}</td>
+				<td>{{ product.price }}kr</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+
+

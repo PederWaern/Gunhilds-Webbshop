@@ -21,7 +21,11 @@ angular.module("cart")
             
             clearCart: function() {
                 cart = [];
-            }
+            },
+
+            getCart: function() {
+                return cart;
+            } 
         };
 
 
