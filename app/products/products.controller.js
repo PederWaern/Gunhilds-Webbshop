@@ -2,11 +2,12 @@ angular.module("products")
     .controller("productsController", ["$scope", "$location", "productsService", "cartService", function ($scope, $location, productsService, cartService) {
         var products = [];
         var categories = [];
-        $scope.cartNumber = 0;
-        // var cart = [];
+        $scope.cartSize = cartService.getCartSize();
 
         $scope.addProductToCart = function(product) {
             console.log("from addProductToCart: product" + product.name + "added!");
+            cartService.addProductToCart(product);
+            $scope.cartSize = cartService.getCartSize();
         };
 
 
