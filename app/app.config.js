@@ -22,6 +22,10 @@ angular.module("app")
         templateUrl: "app/cart/cart.template.html",
         controller: "cartController"
     })
+     .when("/AddCustomer", {
+        templateUrl: "app/addcustomer/addcustomer.template.html",
+        controller: "addCustomerController"
+    })
     .otherwise("/Products");
     $locationProvider.html5Mode(true);
 }]);
