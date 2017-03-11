@@ -11,6 +11,7 @@ angular.module("logout")
             loginService.setUserLoggedIn(false);
             $scope.logoutText = loginService.getNames() + " är utloggad";
             loginService.setNames("","");
+            cartService.clearCart();
 
         }
     }]);
