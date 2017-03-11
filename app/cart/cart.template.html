@@ -22,13 +22,13 @@
 			<tr>
 				<td></td>
 				<td></td>
-				<td>Totalbelopp: {{ getTotalPrice }}kr</td>
+				<td><strong>Totalbelopp: {{ getTotalPrice }} kr</strong></td>
 			</tr>
 			<tr>
 				<td><button class="btn btn-primary" ng-click="emptyCart()">Töm kundvagn</button></td>
 				<td></td>
 				<td><button class="btn btn-primary" ng-show="showSendButton" ng-click="sendOrder()">Beställ!</button></td>
-				<td><a class="btn btn-info" href="/Login" ng-show="showLoginButton">Logga in för att beställa</a></td>
+				<td><a class="btn btn-primary" href="/Login" ng-show="showLoginButton">Logga in för att beställa</a></td>
 			</tr>
 		</tbody>
 	</table>
