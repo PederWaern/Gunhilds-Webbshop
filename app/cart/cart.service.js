@@ -22,35 +22,44 @@ angular.module("cart")
                             i = cart.length;
                         }
                     }
-                    if (!productFound){
+                    if (!productFound) {
                         product.amount = 1;
                         cart.push(product);
                     }
                 }
             },
 
-        removeProductFromCart: function (product) {
-            for (var i = cart.length - 1; i >= 0; i--) {
-                if (product.id == cart[i].id) {
-                    cart.splice(i, 1);
+            removeProductFromCart: function (product) {
+                for (var i = cart.length - 1; i >= 0; i--) {
+                    if (product.id == cart[i].id) {
+                        cart.splice(i, 1);
+                    }
                 }
-            }
-        },
+            },
 
-        clearCart: function () {
-            cart = [];
-        },
+            clearCart: function () {
+                cart = [];
+            },
 
-        getCart: function () {
-            return cart;
-        },
-        getAmountArticlesAdded : function () {
-            var amount = 0;
-            for (var i = 0; i < cart.length; i++) {
-                amount += cart[i].amount;
+            getCart: function () {
+                return cart;
+            },
+            getAmountArticlesAdded: function () {
+                var amount = 0;
+                for (var i = 0; i < cart.length; i++) {
+                    amount += cart[i].amount;
+                }
+                return amount;
+            },
+            getTotalPrice: function () {
+                var totalPrice = 0;
+                angular.forEach(cart, function (product) {
+                    totalPrice += product.price * product.amount;
+                })
+                return totalPrice;
             }
-            return amount;
-        }
+
+
         };
 
 

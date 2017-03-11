@@ -5,10 +5,13 @@ angular.module("cart")
         $scope.removeFromCart = function(prod) {
             cartService.removeProductFromCart(prod);
             $scope.products = cartService.getCart();
+            $scope.getTotalPrice = cartService.getTotalPrice();
         }
 
         $scope.emptyCart = function() {
             cartService.clearCart();
             $scope.products = cartService.getCart();
         }
+
+        $scope.getTotalPrice = cartService.getTotalPrice();
     }]);
