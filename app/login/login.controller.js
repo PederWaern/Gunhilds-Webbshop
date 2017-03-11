@@ -8,9 +8,7 @@ angular.module("login")
 
         $scope.login = function () {
             $scope.showDanger = false;
-            $scope.showSuccess = false;
-            
-            var user = [];
+            var user = {};
             user.email = $scope.email;
             user.password = $scope.password;
             
@@ -20,10 +18,7 @@ angular.module("login")
                 
                 loginService.setUser(res.data);
                 loginService.setUserLoggedIn(true);
-
-                $scope.showSuccess = true;
-                $scope.text = res.data.firstName + " " + res.data.lastName + " är inloggad";
-                
+                $location.path("/Logout");
                 
 
             }, function errorCallback(response) {

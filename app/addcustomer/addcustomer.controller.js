@@ -1,10 +1,9 @@
 angular.module("addcustomer")
-    .controller("addCustomerController", ["$scope", "$location", "addCustomerService", function ($scope, $location, addCustomerService ) {
+    .controller("addCustomerController", ["$scope", "$location", "addCustomerService", "loginService", function ($scope, $location, addCustomerService, loginService) {
 
-        $scope.createCustomer = function() {
+        $scope.createCustomer = function () {
             $scope.showDanger = false;
-            $scope.showSuccess = false;
-            
+
             var cust = {};
             cust.firstName = $scope.firstName;
             cust.lastName = $scope.lastName;
@@ -16,18 +15,35 @@ angular.module("addcustomer")
             cust.city = $scope.city;
 
             addCustomerService.createCustomer(cust).then(function successCallback(response) {
-                console.log("User was created successfully!")
-                
+                console.log("User was created successfully!");
+
+                    var user = cust;
+
+                    loginService.loginUser(user).then(function successCallback(response) {
+                        var res = {};
+                        res = response;
+                        loginService.setUser(res.data);
+                        loginService.setUserLoggedIn(true);
+                        $location.path("/Logout");
+
+
+                    }, function errorCallback(response) {
+                        $scope.showDanger = true;
+                        $scope.text = "Felaktigt användarnamn eller lösenord";
+                        loginService.setUserLoggedIn(false);
+                    });
+
             }, function errorCallback(response) {
                 console.log("Failed to create user");
+                $scope.text = "Lyckades inte skapa användaren, var vänlig försök igen senare";
             });
 
         }
 
-        
-        
+
+
     }]);
 
-    
+
 
 

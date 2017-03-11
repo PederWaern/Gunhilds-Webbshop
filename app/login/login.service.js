@@ -6,11 +6,7 @@ angular.module("login")
 
     return { 
         loginUser: function (loginDetails){
-            var toSend = {};
-            toSend.email = loginDetails.email;
-            toSend.password = loginDetails.password;
-          
-            return $http.post("http://nackbutik.azurewebsites.net/api/customer/login", toSend);
+            return $http.post("http://nackbutik.azurewebsites.net/api/customer/login", loginDetails);
         },
         setUserLoggedIn: function (bool) {
             if(bool) {

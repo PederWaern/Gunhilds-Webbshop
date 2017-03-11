@@ -1,4 +1,5 @@
 <h1>LOGOUT</h1>
-
-<button class="btn btn-info" ng-click="logOut()">Logga ut användare</button>
+<form class ="form-horizontal "name="logoutForm">
+<button class="btn btn-info" ng-click="logOut()" ng-disabled="logoutForm.$submitted">Logga ut användare</button>
+</form>
 <p> {{ logoutText }}</p>
