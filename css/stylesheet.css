@@ -39,3 +39,10 @@ li a {
 .btn-primary:hover { 
     background-color: black;
 }
+
+.productbg {
+    background-color:yellow;
+}
+.soldout {
+    background-color: gray;
+}

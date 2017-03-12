@@ -36,11 +36,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="product in products | filter: textfilter">
+			<tr class="productbg" ng-repeat="product in products | filter: textfilter" ng-class="{
+				'soldout' : product.unitsInStock < 10 }">
 				<td ng-click="productClicked(product.id)">{{ product.name }} </td>
 				<td><img class="clothpic" src="{{ product.imageUrl }}" ng-click="productClicked(product.id)" /></td>
 				<td>{{ product.price }}kr</td>
-				<td><button class="btn btn-primary" ng-click="addProductToCart(product)">Köp nu</button></td>
+				<td><button class="btn btn-primary" ng-click="addProductToCart(product)" ng-hide="product.unitsInStock < 10">Köp nu</button></td>
 			</tr>
 		</tbody>
 	</table>
