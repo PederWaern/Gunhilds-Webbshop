@@ -2,6 +2,10 @@ body {
    padding: 40px;
 }
 
+#logo {
+    padding-left: 13px;
+}
+
 li a {
     color: black;
 }
