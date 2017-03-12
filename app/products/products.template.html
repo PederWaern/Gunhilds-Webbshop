@@ -37,12 +37,12 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="product in products | filter: textfilter" ng-class="{
-				'soldout' : product.unitsInStock < 10 }">
+				'soldout' : product.unitsInStock <= 0 }">
 				<td ng-click="productClicked(product.id)">{{ product.name }} </td>
 				<td><img class="clothpic" src="{{ product.imageUrl }}" ng-click="productClicked(product.id)" /></td>
 				<td>{{ product.price }}kr</td>
-				<td><button class="btn btn-primary" ng-click="addProductToCart(product)" ng-hide="product.unitsInStock < 10">Köp nu</button>
-				<button class="btn btn-primary" ng-show="product.unitsInStock < 10" ng-click="productClicked(product.id)">Slutsåld</button>
+				<td><button class="btn btn-primary" ng-click="addProductToCart(product)" ng-hide="product.unitsInStock <= 0">Köp nu</button>
+				<button class="btn btn-primary" ng-show="product.unitsInStock <= 0" ng-click="productClicked(product.id)">Slutsåld</button>
 				</td>
 			</tr>
 		</tbody>
