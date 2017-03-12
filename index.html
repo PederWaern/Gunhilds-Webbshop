@@ -25,11 +25,11 @@
 
     <script src="app/logout/logout.module.js"></script>
     <script src="app/logout/logout.controller.js"></script>
-    
+
     <script src="app/products/products.module.js"></script>
     <script src="app/products/products.service.js"></script>
     <script src="app/products/products.controller.js"></script>
-    
+
     <script src="app/productdetails/productdetails.module.js"></script>
     <script src="app/productdetails/productdetails.controller.js"></script>
 
@@ -64,20 +64,14 @@
                             <h3 ng-model="test">Kundvagn</h3>
                         </a>
                     </li>
-                </ul>
-            </div>
-            <div class="col-md-2">
-                <ul class="nav nav-pills">
                     <li>
-                        <a href="/Login" id="loginbutton" ng-model="loginText">
-                            <h4>Konto</h4>
+                        <a href="/Login">
+                            <h3>Konto</h3>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-
-
         <div ng-view></div>
     </div>
 </body>

@@ -8,7 +8,6 @@ angular.module("logout")
         $scope.logoutText = "Du är inloggad som " + loginService.getNames();
     
         $scope.logOut = function () {
-            console.log("hej från logout");
             loginService.setUserLoggedIn(false);
             $scope.logoutText = loginService.getNames() + " är utloggad";
             loginService.setNames("","");

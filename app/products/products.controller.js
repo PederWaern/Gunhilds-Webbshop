@@ -6,22 +6,6 @@ angular.module("products")
 
         $scope.sortType = 'name';
         $scope.sortReverse  = false;
-        
-       /* $scope.sortItems = [
-            {
-                name: "Namn", 
-                value: "name"},
-            {
-                name: "Kategori", 
-                value: "categoryName"   
-            },
-            {
-                name: "Pris", 
-                value: "price" 
-            }];
-
-         $scope.sortSelected = $scope.sortItems[0].name;*/
-
  
         productsService.getProductCategory().then(function (response) {
             categories = response.data;
@@ -47,7 +31,6 @@ angular.module("products")
 
 
         $scope.addProductToCart = function(product) {
-            console.log("from addProductToCart: product" + product.name + "added!");
             cartService.addProductToCart(product);
             $scope.cartSize = cartService.getAmountArticlesAdded();
 

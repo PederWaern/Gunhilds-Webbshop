@@ -15,8 +15,6 @@ angular.module("addcustomer")
             cust.city = $scope.city;
 
             addCustomerService.createCustomer(cust).then(function successCallback(response) {
-                console.log("User was created successfully!");
-
                     var user = cust;
 
                     loginService.loginUser(user).then(function successCallback(response) {
@@ -34,7 +32,6 @@ angular.module("addcustomer")
                     });
 
             }, function errorCallback(response) {
-                console.log("Failed to create user");
                 $scope.text = "Lyckades inte skapa användaren, var vänlig försök igen senare";
             });
 

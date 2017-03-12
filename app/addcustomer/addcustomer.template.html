@@ -1,5 +1,4 @@
 <div class="row">
-    <div class="col-md-1"></div>
     <div class="col-md-4">
         <h2>Skapa konto</h2>
         <form class="form-horizontal" name="addForm" novalidate>
@@ -67,10 +66,9 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-1"></div>
     <div class="col-md-4">
-
+        <p class="text-danger" ng-model="dangertext" ng-show="showDanger"> {{ text }} </p>
+        <p class="text-success" ng-model="successtext" ng-show="showSuccess"> {{ text }} </p>
     </div>
-    <p class="text-danger" ng-model="dangertext" ng-show="showDanger"> {{ text }} </p>
-    <p class="text-success" ng-model="successtext" ng-show="showSuccess"> {{ text }} </p>
+
 </div>

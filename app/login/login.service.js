@@ -36,7 +36,6 @@ angular.module("login")
 
         setUser: function(userO) {
             user = userO;
-            console.log("from login service, user is: " + user.firstName + user.lastName);
         },
 
         getUser: function() {

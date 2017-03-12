@@ -35,8 +35,6 @@ angular.module("cart")
         $scope.sendOrder = function() {
             var order = {};
             var userId = loginService.getUserId();
-            console.log(userId);
-            
             var cart = cartService.getCart();
 
             var products = [];
@@ -47,11 +45,10 @@ angular.module("cart")
                     products.push(item);
                     item = {};
                 });
-            // console.log(products);
+           
 
             order.customerId = userId;
             order.products = products;
-            console.log(order);
             cartService.sendOrder(order).then(function successCallback(response) {
                 $scope.showSuccess = true;
                 $scope.text = "Tack, din order har skickats!";

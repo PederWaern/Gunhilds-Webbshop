@@ -6,15 +6,6 @@ li a {
     color: black;
 }
 
-#logo {
-    
-}
-
-#navspan {
-    padding-left: 2px;
-    margin-bottom: 20px;
-}
-
 .clothpic {
     width:100px;
 }
@@ -48,5 +39,9 @@ li a {
 }
 .form-control {
     width: 50% ;
+}
+
+#accountnav{
+   text-align: right;
 }
 
