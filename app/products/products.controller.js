@@ -39,7 +39,6 @@ angular.module("products")
          $scope.productClicked = function (id) {
             $location.path("/Products/" + id);
         }
-
         
     }]);
 

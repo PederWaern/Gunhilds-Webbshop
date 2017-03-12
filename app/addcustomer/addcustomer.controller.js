@@ -22,7 +22,7 @@ angular.module("addcustomer")
                         res = response;
                         loginService.setUser(res.data);
                         loginService.setUserLoggedIn(true);
-                        $location.path("/Logout");
+                        $location.path("/MyAccount");
 
 
                     }, function errorCallback(response) {

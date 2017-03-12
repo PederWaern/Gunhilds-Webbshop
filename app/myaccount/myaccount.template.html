@@ -1,0 +1,11 @@
+<h1>Mitt konto</h1>
+<form class="form-horizontal " name="logoutForm">
+    <div class="btn-group" role="group">
+        <p> {{ logoutText }}</p>
+        
+        <button class="btn btn-primary" href="/" ng-show="showMyOrders">Mina ordrar</button>
+        <button class="btn btn-primary" ng-click="goToAccountDetails()" ng-show="showMyDetails">Mina uppgifter</button>
+        <button class="btn btn-primary" ng-click="logOut()" ng-show="showLogout" >Logga ut användare</button>
+        <button class="btn btn-primary" ng-click="goToLogin()" ng-show="showLogin">Logga in</button>
+    </div>
+</form>

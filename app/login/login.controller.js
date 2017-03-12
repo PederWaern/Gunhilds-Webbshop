@@ -2,7 +2,7 @@ angular.module("login")
     .controller("loginController", ["$scope", "$location", "loginService", function ($scope, $location, loginService) {
 
          if(loginService.getLoginStatus()) {
-                $location.path("/Logout");
+                $location.path("/MyAccount");
             };
 
 
@@ -18,7 +18,7 @@ angular.module("login")
                 
                 loginService.setUser(res.data);
                 loginService.setUserLoggedIn(true);
-                $location.path("/Logout");
+                $location.path("/MyAccount");
                 
 
             }, function errorCallback(response) {

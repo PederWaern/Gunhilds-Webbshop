@@ -1,5 +1,5 @@
 angular.module("cart")
-    .controller("cartController", ["$scope", "$http", "$location", "cartService","loginService", 
+    .controller("cartController", ["$scope", "$http", "$location", "cartService", "loginService", 
     function($scope, $http, $location, cartService, loginService){
 
         

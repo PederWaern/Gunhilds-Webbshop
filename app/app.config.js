@@ -14,9 +14,13 @@ angular.module("app")
         templateUrl: "app/login/login.template.html",
         controller: "loginController"
     })
-     .when("/Logout", {
-        templateUrl: "app/logout/logout.template.html",
-        controller: "logoutController"
+     .when("/MyAccount", {
+        templateUrl: "app/myaccount/myaccount.template.html",
+        controller: "myAccountController"
+    })
+     .when("/MyOrders/:customerId", {
+        templateUrl: "app/myaccount/myorders/myorders.template.html",
+        controller: "myOrdersController"
     })
      .when("/Cart", {
         templateUrl: "app/cart/cart.template.html",
