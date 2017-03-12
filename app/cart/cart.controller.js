@@ -53,6 +53,8 @@ angular.module("cart")
                 $scope.showSuccess = true;
                 $scope.text = "Tack, din order har skickats!";
                 cartService.clearCart();
+                $scope.showSendButton = false;
+
                 
 
             }, function errorCallback(response) {

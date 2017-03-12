@@ -14,8 +14,6 @@ angular.module("products")
 
             productsService.getProducts().then(function (response) {
                 products = response.data;
-
-                    
                 angular.forEach(categories, function (category) {
                     angular.forEach(products, function (product) {
                         if (product.categoryId == category.id) {
