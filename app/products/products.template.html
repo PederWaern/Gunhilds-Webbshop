@@ -15,7 +15,7 @@
 		<div class="form-group">
 			<form class="form-horizontal">
 				<label for="searchText">Sök:</label>
-				<input name="searchText" placeholder="Sök bland produkter och kategorier.." class="form-control" type="text" ng-model="textfilter"></input>
+				<input name="searchText" placeholder="Sök bland produkter och kategorier.." class="form-control" type="text" ng-model="searchText"></input>
 			</form>
 		</div>
 	</div>
@@ -47,7 +47,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="product in products | filter: textfilter | orderBy:sortType:sortReverse" ng-class="{
+			<tr ng-repeat="product in products | filter: prodCatFilter | orderBy:sortType:sortReverse" ng-class="{
 				'soldout' : product.unitsInStock <= 0 }">
 				<td ng-click="productClicked(product.id)">{{ product.name }} </td>
 				<td> {{product.categoryName}}</td>

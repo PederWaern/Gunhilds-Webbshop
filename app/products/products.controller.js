@@ -40,6 +40,17 @@ angular.module("products")
             $location.path("/Products/" + id);
         }
         
+        $scope.prodCatFilter = function(product) {
+            if($scope.searchText == undefined){
+                return true;
+            } else {
+                if(product.name.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1 ||
+                    product.categoryName.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1) {
+                    return true;
+                }
+            }
+            return false;
+        }
     }]);
 
    
