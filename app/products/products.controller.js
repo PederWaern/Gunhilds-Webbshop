@@ -4,6 +4,25 @@ angular.module("products")
         var categories = [];
         $scope.cartSize = cartService.getAmountArticlesAdded();
 
+        $scope.sortType = 'name';
+        $scope.sortReverse  = false;
+        
+       /* $scope.sortItems = [
+            {
+                name: "Namn", 
+                value: "name"},
+            {
+                name: "Kategori", 
+                value: "categoryName"   
+            },
+            {
+                name: "Pris", 
+                value: "price" 
+            }];
+
+         $scope.sortSelected = $scope.sortItems[0].name;*/
+
+ 
         productsService.getProductCategory().then(function (response) {
             categories = response.data;
             $scope.categories = categories;
