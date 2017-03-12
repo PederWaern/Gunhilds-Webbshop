@@ -40,9 +40,9 @@ li a {
     background-color: black;
 }
 
-.productbg {
-    background-color:yellow;
-}
+
 .soldout {
-    background-color: gray;
+    background-color: lightgray; 
+    opacity: 0.6;
+
 }
