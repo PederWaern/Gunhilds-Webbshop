@@ -1,6 +1,10 @@
 angular.module("app")
 .config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
     $routeProvider
+    .when("/", {
+        templateUrl: "app/products/products.template.html",
+        controller: "productsController"
+    })
     .when("/Products", {
         templateUrl: "app/products/products.template.html",
         controller: "productsController"
