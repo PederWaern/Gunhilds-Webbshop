@@ -18,7 +18,9 @@ angular.module("products")
                     angular.forEach(products, function (product) {
                         if (product.categoryId == category.id) {
                             product.categoryName = category.name;
+                            
                         }
+                        console.log(product.imageUrl);
                     })
 
                     $scope.products = products;
